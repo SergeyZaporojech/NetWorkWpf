@@ -1,0 +1,18 @@
+﻿<Window x:Class="_01_smtp.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_smtp"
+        mc:Ignorable="d"
+        Title="Authorization" Height="250" Width="650">
+    <DockPanel>
+        <Grid Margin="0,0,-1,2" Width="648" Height="237">
+            <Label FontSize="20" Margin="25,10,563,188" >Login</Label>
+            <TextBox x:Name ="txtLogin" Margin="146,12,119,184"/>
+            <Label Margin="28,77,519,119" FontSize="20">Password</Label>
+            <TextBox x:Name="txtPassword" Margin="145,75,122,119"/>
+            <Button Margin="227,143,254,58" FontSize="20" RenderTransformOrigin="1.087,0.535" Click="Button_Click">Authorization</Button>
+        </Grid>
+    </DockPanel>
+</Window>
