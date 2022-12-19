@@ -10,11 +10,11 @@ namespace _01_smtp
 {
     public partial class MainWindow : Window
     {
-        const string myEmail = "zaporojechs@gmail.com";
-        const string myPassword = "rvckocqidlykxlga";
+        //const string myEmail = "zaporojechs@gmail.com";
+        //const string myPassword = "rvckocqidlykxlga";
 
-        //public string myEmail;
-        //public string myPassword ;
+        public string myEmail;
+        public string myPassword;
         public List<Attachment> attachments = new List<Attachment>();
 
 

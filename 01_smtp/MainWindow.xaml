@@ -29,7 +29,7 @@
         <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="28" Margin="530,-2,175,1">Files</TextBlock>
         </Grid>
         <Grid DockPanel.Dock="Bottom">
-            <Button x:Name="sendBtn" Click="SendBtnClick" Padding="8" FontWeight="Bold" FontSize="18" Margin="220,-6,409,6" RenderTransformOrigin="0.292,0.522">Send messange</Button>
+            <Button x:Name="sendBtn" Click="SendBtnClick" Padding="8" FontWeight="Bold" FontSize="18" Margin="220,-14,409,14" RenderTransformOrigin="0.292,0.522">Send messange</Button>
             <Button x:Name="addFileBtn" Click="addFileBtnClick" Padding="8" FontWeight="Bold" FontSize="18" Margin="546,-10,169,10">Add file</Button>
 
         </Grid>

@@ -17,9 +17,9 @@ namespace _03_imap_mailkit
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class MassengeWindow : Window
     {
-        public Window1()
+        public MassengeWindow()
         {
             InitializeComponent();
         }

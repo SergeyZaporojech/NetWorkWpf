@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MailKit.Net.Imap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace _01_smtp
+namespace _03_imap_mailkit
 {
     /// <summary>
     /// Interaction logic for Authorization.xaml
     /// </summary>
     public partial class Authorization : Window
     {
-
-        private string password;
-        private string login;
+        private string password = "";
+        private string login = "";
         public Authorization()
         {
             InitializeComponent();
@@ -29,25 +29,29 @@ namespace _01_smtp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (txtPassword.Text == password || txtLogin.Text == login)
+            try
             {
+                using (var client = new ImapClient())
+                {
+                    client.Authenticate(txtLogin.Text, txtPassword.Text);
+                }
                 MailboxWindows dilog = new MailboxWindows();
-                //dilog.myPassword= txtPassword.Text;
-                //dilog.myEmail=  txtLogin.Text;
-                dilog.Show();
+                dilog.password = txtPassword.Text;
+                dilog.username = txtLogin.Text;
             }
-            else
-                if(password==null && login==null)
+            catch (Exception)   
+            {
+                MessageBox.Show("Enter login or password error.");
+            }
+            if (password == null && login == null)
                 MessageBox.Show("You have not selected a mailbox.");
-            else
-                MessageBox.Show("Enter login or password error. ");
             
         }
 
         private void mMailboxGoogle_Click(object sender, RoutedEventArgs e)
         {
-           login= "zaporojechs@gmail.com";
-           password = "rvckocqidlykxlga";
+            login = "zaporojechs@gmail.com";
+            password = "rvckocqidlykxlga";
         }
 
         private void mMailboxUkrNet_Click(object sender, RoutedEventArgs e)

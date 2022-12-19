@@ -1,0 +1,40 @@
+﻿<Window x:Class="_04_http_client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_04_http_client"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="360" Width="574" >
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="0" >Url:</Label>
+            <TextBox x:Name="urlTxtBox" VerticalContentAlignment="Center" Margin="6,6,9,6" Grid.Row="0" Grid.Column="1" Text="https://source.unsplash.com/random"></TextBox>
+            <Label VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="0" >Size foto:</Label>
+            <TextBox x:Name="sizeTxtBox" VerticalContentAlignment="Center" Margin="6,6,396,6" Grid.Row="1" Grid.Column="1"></TextBox>
+            <Label VerticalContentAlignment="Center" Grid.Column="1" Margin="131,28,345,2" Grid.RowSpan="2" RenderTransformOrigin="1.563,0.61" >X</Label>
+            <Button Grid.Column="1" Margin="312,27,31,3" Grid.RowSpan="2" Click="Button_Click">See the last loaded image</Button>
+            <TextBox x:Name="sizeTxtBox2" VerticalContentAlignment="Center" Margin="171,5,230,7" Grid.Row="1" Grid.Column="1"></TextBox>
+            <Label VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="0" >Type foto:</Label>
+            <ComboBox x:Name="cbCategory" Grid.Column="1" HorizontalAlignment="Left" Margin="6,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="138" />
+
+            <!--<Image x:Name="Foto" Width="75" Hei<StackPanel />ght="75"  Grid.Row="3" Grid.Column="1"/>-->
+        </Grid>
+        <!--<Button Click="CanselBtnClick" DockPanel.Dock="Bottom" Padding="10" Background="DarkCyan" Foreground="White">Cansel download</Button>-->
+        <Button Click="DownloadBtnClick" DockPanel.Dock="Bottom" Padding="10" Background="DarkCyan" Foreground="White">Download</Button>
+        <ProgressBar x:Name="progressBar" DockPanel.Dock="Bottom" Height="6" Margin="6"></ProgressBar>
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="28">Download History</TextBlock>
+        <ListBox x:Name="historyList" Margin="6"></ListBox>
+    </DockPanel>
+</Window>

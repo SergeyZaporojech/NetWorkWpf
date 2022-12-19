@@ -1,19 +1,20 @@
-﻿<Window x:Class="_01_smtp.Authorization"
+﻿<Window x:Class="_03_imap_mailkit.Authorization"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_01_smtp"
+        xmlns:local="clr-namespace:_03_imap_mailkit"
         mc:Ignorable="d"
-        Title="Authorization" Height="243" Width="495">
+Title="Authorization" Height="243" Width="495">
     <DockPanel>
         <Grid Margin="0,0,-1,2" Width="489" Height="235">
             <Menu>
                 <MenuItem Header="Mailbox" FontSize="13">
                     <MenuItem Header="Google" Name="mMailboxGoogle" Click="mMailboxGoogle_Click"/>
                     <MenuItem Header="UkrNet" Name="mMailboxUkrNet" Click="mMailboxUkrNet_Click"/>
-                 </MenuItem>
+                </MenuItem>
             </Menu>
+
             <Label FontSize="15" Margin="70,37,354,161" >Login</Label>
             <TextBox x:Name ="txtLogin" Margin="141,42,128,166"/>
             <Label Margin="58,100,353,96" FontSize="15" RenderTransformOrigin="1.006,0.524">Password</Label>

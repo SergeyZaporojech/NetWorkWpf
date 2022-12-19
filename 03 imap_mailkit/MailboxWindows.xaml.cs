@@ -24,12 +24,14 @@ namespace _03_imap_mailkit
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MailboxWindows : Window
     {
 
-        const string username = "zaporojechs@gmail.com"; 
-        const string password = "rvckocqidlykxlga"; 
-        public MainWindow()
+        //const string username = "zaporojechs@gmail.com"; 
+        //const string password = "rvckocqidlykxlga"; 
+        public string username ; 
+        public string password ; 
+        public MailboxWindows()
         {
             InitializeComponent();
         }
@@ -49,6 +51,8 @@ namespace _03_imap_mailkit
         {
             using (var client = new ImapClient())
             {
+
+                
                 client.Connect("imap.gmail.com", 993, SecureSocketOptions.SslOnConnect);
 
                 client.Authenticate(username, password);
@@ -66,10 +70,7 @@ namespace _03_imap_mailkit
                 {
                     MimeMessage message = folder.GetMessage(i);
                     txtMessage.Text += ($"{message.Subject} - {new string(message.TextBody.Take(10).ToArray())}...\n");
-
-                }
-
-               
+                }               
 
                 client.Disconnect(true);
             }
