@@ -5,36 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_03_imap_mailkit"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="820">
+        Title="Send message" Height=" 500" Width="850">
+
     <DockPanel>
         <Grid DockPanel.Dock="Top">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="65*"/>
-                <RowDefinition Height="61*"/>
-                <RowDefinition Height="308*"/>
-            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label  VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0" FontSize="20" >Email:</Label>
-            <TextBox Margin="10" Grid.Column="1" Grid.Row="0"></TextBox>
-            <Label VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1" FontSize="20">Subject :</Label>
-            <TextBox Margin ="10"  Grid.Column="1" Grid.Row="1"></TextBox>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Label VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0">To:</Label>
+            <TextBox x:Name="toTxtBox" Margin="6" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
+
+            <Label VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1">Subject:</Label>
+            <TextBox x:Name="subjectTxtBox" Margin="6" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
         </Grid>
         <Grid DockPanel.Dock="Top">
-            <TextBlock TextAlignment="Center" FontSize="25"  Height="33" Margin="14,1,290,-1">Messange:</TextBlock>
-            <TextBlock  TextAlignment="Center" FontSize="25"  Height="33" Margin="532,1,13,-1">Add files:</TextBlock>
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="28" Margin="39,0,240,0">Text</TextBlock>
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="28" Margin="530,-2,175,1">Files</TextBlock>
         </Grid>
         <Grid DockPanel.Dock="Bottom">
+            <Button x:Name="sendBtn" Click="SendBtnClick" Padding="8" FontWeight="Bold" FontSize="18" Margin="220,-14,409,14" RenderTransformOrigin="0.292,0.522">Send messange</Button>
+            <Button x:Name="addFileBtn" Click="addFileBtnClick" Padding="8" FontWeight="Bold" FontSize="18" Margin="546,-10,169,10">Add file</Button>
 
-            <Button  Width="200" Margin="145,-3,400,4" FontSize="20">Send messange</Button>
-            <Button  Width="100" Margin="595,0,105,3" FontSize="20"  >Add file</Button>
         </Grid>
-
-        <TextBox DockPanel.Dock="Left" Width="500" Margin="10"></TextBox>
-        <TextBox DockPanel.Dock="Right" Width="250" Margin="10"></TextBox>
-
+        <TextBox x:Name="bodyTxtBox" Padding="4" TextWrapping="Wrap" AcceptsReturn="True" Margin="6" Width="523" Height="266"></TextBox>
+        <TextBox x:Name="txtAddFile" TextWrapping="Wrap"  Width="154" Height="267"/>
+        <CheckBox x:Name="chbHighPriority"   Height="256" Width="130" Content="High priority"></CheckBox>
+    
     </DockPanel>
    
 

@@ -1,4 +1,5 @@
 ﻿using MailKit.Net.Imap;
+using MailKit.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,43 +21,60 @@ namespace _03_imap_mailkit
     /// </summary>
     public partial class Authorization : Window
     {
-        private string password = "";
-        private string login = "";
+        //private string password ;
+        //private string login ;
+        public int port;
+        public string host = ""; 
+
         public Authorization()
         {
             InitializeComponent();
+            txtPassword.Text = "rvckocqidlykxlga";
+            txtLogin.Text = "zaporojechs@gmail.com";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (host == "")
+            {
+                MessageBox.Show("You not cheked mailbox");
+                return;
+            }
             try
             {
                 using (var client = new ImapClient())
                 {
+                    client.Connect (host, port, SecureSocketOptions.SslOnConnect);
                     client.Authenticate(txtLogin.Text, txtPassword.Text);
+                   
                 }
-                MailboxWindows dilog = new MailboxWindows();
+                MailboxWindows dilog = new MailboxWindows(txtLogin.Text, txtPassword.Text, host,port);
                 dilog.password = txtPassword.Text;
                 dilog.username = txtLogin.Text;
+                dilog.host = host;
+                dilog.port = port;                
+                dilog.ShowDialog();
             }
-            catch (Exception)   
+            catch (Exception ex)   
             {
+                //MessageBox.Show(ex.Message);
                 MessageBox.Show("Enter login or password error.");
-            }
-            if (password == null && login == null)
-                MessageBox.Show("You have not selected a mailbox.");
-            
+            }                      
         }
 
         private void mMailboxGoogle_Click(object sender, RoutedEventArgs e)
         {
-            login = "zaporojechs@gmail.com";
-            password = "rvckocqidlykxlga";
+            //login = "zaporojechs@gmail.com";
+            //password = "rvckocqidlykxlga";
+            //password = "ueqsseqcpcyxyhgh";
+            host = "imap.gmail.com";
+            port = 993; 
         }
 
         private void mMailboxUkrNet_Click(object sender, RoutedEventArgs e)
         {
-
+            host = "imap.ukr.net";
+            port = 993;
         }
     }
 }

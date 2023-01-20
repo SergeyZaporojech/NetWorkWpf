@@ -31,7 +31,7 @@
 
             <!--<Image x:Name="Foto" Width="75" Hei<StackPanel />ght="75"  Grid.Row="3" Grid.Column="1"/>-->
         </Grid>
-        <!--<Button Click="CanselBtnClick" DockPanel.Dock="Bottom" Padding="10" Background="DarkCyan" Foreground="White">Cansel download</Button>-->
+        <!--<Button Click="CanselBtnClick" DockPanel.Dock="Bottom">Cansel download</Button>-->
         <Button Click="DownloadBtnClick" DockPanel.Dock="Bottom" Padding="10" Background="DarkCyan" Foreground="White">Download</Button>
         <ProgressBar x:Name="progressBar" DockPanel.Dock="Bottom" Height="6" Margin="6"></ProgressBar>
         <TextBlock DockPanel.Dock="Top" TextAlignment="Center" FontSize="28">Download History</TextBlock>

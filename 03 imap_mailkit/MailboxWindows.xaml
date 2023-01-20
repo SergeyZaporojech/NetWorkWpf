@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_03_imap_mailkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
+        Title="MainWindow" Height="480" Width="800" Loaded="Window_Loaded">
+    <Grid Margin="0,0,-8,-9">
         <Label Content="Folders:" HorizontalAlignment="Left" Margin="56,15,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox x:Name="txtFolders" HorizontalAlignment="Left" Margin="24,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="326" Loaded="TextBox_Loaded"/>
-        <TextBox x:Name="txtMessage" HorizontalAlignment="Left" Margin="292,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="418" RenderTransformOrigin="0.5,0.5" Height="322" Loaded="TextBox_Loaded_1">
-            
-        </TextBox>
-        <Label Content="Messages:" HorizontalAlignment="Left" Margin="379,20,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="1.215,0.429"/>
+        <ListBox x:Name="txtFolders" HorizontalAlignment="Left" Margin="24,62,0,0" VerticalAlignment="Top" Width="173" Height="326" />
+        <ListBox x:Name="txtMessage" HorizontalAlignment="Left" Margin="263,70,0,94"  Width="496" RenderTransformOrigin="0.5,0.5" />
+        <Label Content="Messages:" HorizontalAlignment="Left" Margin="465,18,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="1.215,0.429"/>
+        <Button Content=" next page " HorizontalAlignment="Left" Margin="335,399,0,0" VerticalAlignment="Top" Height="25" Width="90" Click="Button_Click" />
+        <Button Content="previous page" HorizontalAlignment="Left" Margin="513,400,0,0" VerticalAlignment="Top" Height="25" Width="88" Click="Button_Click_1"/>
+        <!--<ComboBox x:Name="cbFolders" HorizontalAlignment="Left" Margin="625,29,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.067,0.638"/>-->
+        <Button Content="Write a message" HorizontalAlignment="Left" Margin="263,21,0,0" VerticalAlignment="Top" Width="159" Height="33" FontSize="18" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

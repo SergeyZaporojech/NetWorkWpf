@@ -2,14 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>_03_imap_mailkit</RootNamespace>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>_05_clientApp</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="3.4.3" />
     <PackageReference Include="MimeKit" Version="3.4.3" />
   </ItemGroup>
 
