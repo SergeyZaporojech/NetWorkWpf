@@ -29,8 +29,7 @@ namespace _03_imap_mailkit
         public Authorization()
         {
             InitializeComponent();
-            txtPassword.Text = "rvckocqidlykxlga";
-            txtLogin.Text = "zaporojechs@gmail.com";
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,9 +63,7 @@ namespace _03_imap_mailkit
 
         private void mMailboxGoogle_Click(object sender, RoutedEventArgs e)
         {
-            //login = "zaporojechs@gmail.com";
-            //password = "rvckocqidlykxlga";
-            //password = "ueqsseqcpcyxyhgh";
+            
             host = "imap.gmail.com";
             port = 993; 
         }
